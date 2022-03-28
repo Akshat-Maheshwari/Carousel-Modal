@@ -1,0 +1,154 @@
+.my-carousel{
+    overflow:hidden;
+    &-back{
+        position: absolute;
+        left:0;
+        top:35%;
+        &-svg{
+            height:50px;
+            width:50px;
+            &:hover{
+                color:rgb(255, 255, 255);
+            }
+        }
+    }
+    &-next{
+        position: absolute;
+        right:0;
+        top:35%;
+        &-svg{
+            height:50px;
+            width:50px;
+            &:hover{
+                color:rgb(255, 255, 255);
+            }
+        }
+    }
+    &__inner{
+        height:55vh;
+        background-color:transparent;
+        display:flex;
+        transition:transform 1s;
+        transform:translateX(0%);
+    }
+    &__item{
+
+        height:100%;
+        width:100vw;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        &__content{
+            width:25%;
+            height:90%;
+            background-color:antiquewhite;
+            border-radius:20px;
+            overflow: hidden;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            &__img{
+                height:55%;
+                background-color: aquamarine;
+            }
+        }
+    }
+    .carousel-navigator{
+        &__inner{
+        height:200px;  
+        display:flex;
+        justify-content: left;
+        align-items: center;
+        transition:transform 1s;
+        transform:translateX(0%);
+        }
+        .item-container{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &__item{
+            height:80%;
+            width:100%;
+            margin:10px 10px;
+            background-color:adjust-hue($color: #e7dbdb, $degrees: 0);
+            transition: border 0.5s;
+            border-radius: 10px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            &:hover{
+                cursor:pointer
+            }
+
+        }
+        &-back{
+            position: absolute;
+            left:0;
+            top: 80%;
+            &-svg{
+                height:40px;
+                width:40px;
+                &:hover{
+                    color:rgb(255, 255, 255);
+                }
+            }
+        }
+        &-next{
+            position: absolute;
+            right:0;
+            top: 80%;
+            &-svg{
+                height:40px;
+                width:40px;
+                &:hover{
+                    color:rgb(255, 255, 255);
+                }
+            }
+        }
+    }
+}
+
+.modalBackground {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top:0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    .modalTransparent{
+        width: 100vw;
+        height: 100vh;
+        background-color: black; 
+        opacity: 0.6;
+    }
+    .modalContainer {
+        position: absolute;
+        width: 80vw;
+        height:80vh;
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        padding-top:20px;
+        .body {
+        flex: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.7rem;
+        text-align: center;
+        }
+        .closeBtn{
+            position:absolute;
+            right:20px;
+            &-svg{
+            height:30px;
+            width: 30px;
+            &:hover{
+                color:rgb(240, 238, 238)
+            }
+            }
+        }
+    }
+  }
