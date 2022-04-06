@@ -10,7 +10,7 @@ function App() {
 
   // var numberOfItems=document.querySelectorAll(".my-carousel__item").length;
   var numberOfItems = 12;
-  var itemsInNavigatorView = 4;
+  var itemsInNavigatorView = 6;
 
   let moveNavigatorNextFlag = false;
   let moveNavigatorBackFlag = false;
@@ -33,11 +33,11 @@ function App() {
         -carouselInner.style.transform.replace(/[^\d.]/g, "") -
           100 / numberOfItems
       ) > -100
-        ? -carouselInner.style.transform.replace(/[^\d.]/g, "") -
-          100 / numberOfItems
+        ? (-carouselInner.style.transform.replace(/[^\d.]/g, "") -
+          100 / numberOfItems).toFixed(2)
         : 0;
     carouselInner.style.transform = `translateX(${translateX}%)`;
-    // console.log(translateX);
+    console.log(translateX);
     highlightCurrent();
   };
 
@@ -52,7 +52,7 @@ function App() {
           100 / numberOfItems
         : 0;
     carouselInner.style.transform = `translateX(${translateX}%)`;
-    // console.log(translateX);
+    console.log(translateX);
     highlightCurrent();
   };
 
@@ -63,10 +63,10 @@ function App() {
         -carouselInner.style.transform.replace(/[^\d.]/g, "") -
           100 / Math.ceil(numberOfItems / itemsInNavigatorView)
       ) > -100 &&
-      -carouselInner.style.transform.replace(/[^\d.]/g, "") -
-        100 / Math.ceil(numberOfItems / itemsInNavigatorView);
+      (-carouselInner.style.transform.replace(/[^\d.]/g, "") -
+        100 / Math.ceil(numberOfItems / itemsInNavigatorView)).toFixed(2);
     carouselInner.style.transform = `translateX(${translateX}%)`;
-    console.log(-carouselInner.style.transform.replace(/[^\d.]/g, ""));
+    // console.log(-carouselInner.style.transform.replace(/[^\d.]/g, ""));
   };
 
   const backNavigatorInner = () => {
@@ -80,14 +80,14 @@ function App() {
           100 / Math.ceil(numberOfItems / itemsInNavigatorView)
         : 0;
     carouselInner.style.transform = `translateX(${translateX}%)`;
-    console.log(translateX);
-    console.log(
-      Math.round(
-        -carouselInner.style.transform.replace(/[^\d.]/g, "") +
-          100 / Math.ceil(numberOfItems / itemsInNavigatorView)
-      )
-    );
-    console.log(-carouselInner.style.transform.replace(/[^\d.]/g, ""));
+    // console.log(translateX);
+    // console.log(
+    //   Math.round(
+    //     -carouselInner.style.transform.replace(/[^\d.]/g, "") +
+    //       100 / Math.ceil(numberOfItems / itemsInNavigatorView)
+    //   )
+    // );
+    // console.log(-carouselInner.style.transform.replace(/[^\d.]/g, ""));
   };
 
   function navigateToItem(item) {
@@ -325,7 +325,6 @@ function App() {
             </div>
           </div>
         </div>
-
     </div>
   );
 }

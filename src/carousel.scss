@@ -1,5 +1,6 @@
 .my-carousel{
     overflow:hidden;
+    height:100%;
     &-back{
         position: absolute;
         left:0;
@@ -39,10 +40,10 @@
         align-items: center;
         justify-content: center;
         &__content{
-            width:25%;
+            width:300px;
             height:90%;
             background-color:antiquewhite;
-            border-radius:20px;
+            border-radius:10px;
             overflow: hidden;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
             &__img{
@@ -119,14 +120,14 @@
         width: 100vw;
         height: 100vh;
         background-color: black; 
-        opacity: 0.6;
+        opacity: 0.4;
     }
     .modalContainer {
         position: absolute;
         width: 80vw;
         height:80vh;
         border-radius: 12px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         display: flex;
         flex-direction: column;
         padding: 40px;
@@ -149,6 +150,43 @@
                 color:rgb(240, 238, 238)
             }
             }
+        }
+    }
+  }
+
+  @media screen and (max-width: 568px) {
+    .carousel-navigator{
+        display:none;
+    }
+    .my-carousel__item__content{
+        width:200px;
+    }
+    .my-carousel{
+        &-back{
+            top:50%;
+        }
+        &-next{
+            top:50%;
+        }
+    }
+}
+
+  @media screen and (max-width: 768px) {
+    .carousel-navigator{
+        display:none;
+    }
+    .my-carousel__item__content{
+        position:relative;
+        width:300px;
+        height:400px;
+        top:100px;
+    }
+    .my-carousel{
+        &-back{
+            top:50%;
+        }
+        &-next{
+            top:50%;
         }
     }
   }
